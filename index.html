@@ -18,11 +18,13 @@
 </head>
 <body id="body">
   <button onclick="myFunction()" id="toggle">Toggle</button>
+  <input id="test">
 </body>
 <script>
 function myFunction() {
   var elem = document.querySelector('#body');
-  alert(elem.style.backgroundColor);
+  alert(elem.style.background);
+  
   if (elem.style.backgroundColor == '#fff'){elem.style.backgroundColor = '#000'}
   if (elem.style.backgroundColor == '#000'){elem.style.backgroundColor = '#fff'}
 }
