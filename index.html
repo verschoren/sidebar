@@ -4,6 +4,7 @@
   <meta name="viewport" content="width=device-width">
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <link rel="apple-touch-icon" href="7F3C0D5D-997D-47EE-8D40-6236EAA16DC2.jpeg" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <style>
     body {
       background: #FFF;
@@ -14,18 +15,25 @@
         background: #000;
       }
     }
+    
+    button {
+      width: 24px;
+      height: 24px;
+      background: grey;
+      border-radius: 50%;
+      border-color: grey;
+    }
   </style>
 </head>
-<body id="body">
-  <button onclick="myFunction()" id="toggle">Toggle</button>
-  <input id="test">
+<body>
+  <button onclick="myFunction()">&nbsp;</button>
 </body>
 <script>
-function myFunction() {
-  var elem = document.querySelector('#body');
-  alert(elem.style.background);
-  
-  if (elem.style.backgroundColor == '#fff'){elem.style.backgroundColor = '#000'}
-  if (elem.style.backgroundColor == '#000'){elem.style.backgroundColor = '#fff'}
-}
+  function myFunction() {
+    if ($("body").css("background-color") == "rgb(255, 255, 255)"){
+      $("body").css("background-color", "#000");
+    } else {
+      $("body").css("background-color", "FFF");
+    }
+  }
 </script>
