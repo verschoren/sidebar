@@ -9,31 +9,41 @@
     body {
       background: #FFF;
     }
+    #sun {display:none;}
+    #moon {display:block;}
     
     @media (prefers-color-scheme: dark) {
       body {
         background: #000;
       }
+      #moon {display:none;}
+      #sun {display:block;}
     }
     
-    button {
-      width: 24px;
-      height: 24px;
+    .button {
+      width: 22px;
+      height: 22px;
       background: grey;
       border-radius: 50%;
       border-color: grey;
+      padding:4px;
     }
   </style>
 </head>
 <body>
-  <button onclick="myFunction()">&nbsp;</button>
+  <div onclick="myFunction()"><img class="button" id="moon" src="Moon.svg"></div>
+  <div onclick="myFunction()"><img class="button" id="sun" src="Sun.svg"></div>
 </body>
 <script>
   function myFunction() {
     if ($("body").css("background-color") == "rgb(255, 255, 255)"){
       $("body").css("background-color", "#000");
+      $('#sun').show();      
+      $('#moon').hide();
     } else {
       $("body").css("background-color", "FFF");
+      $('#moon').show();      
+      $('#sun').hide();
     }
   }
 </script>
