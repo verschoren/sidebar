@@ -35,21 +35,31 @@
       right: 8px;
       top: 8px;
     }
+    
+    #clicker {
+      height: calc(100% - 60px);
+      width: calc(100% - 30px);
+      position: absolute;
+      top: 60px;
+    }
   </style>
 </head>
 <body>
-  <div onclick="myFunction()"><img class="button" id="moon" src="Moon.svg"></div>
-  <div onclick="myFunction()"><img class="button" id="sun" src="Sun.svg"></div>
-  <div onclick="reload()"><img class="button reload" src="Sync.svg"></div>
+  <div id="buttons">
+    <div onclick="myFunction()"><img class="button" id="moon" src="Moon.svg"></div>
+    <div onclick="myFunction()"><img class="button" id="sun" src="Sun.svg"></div>
+    <div onclick="reload()"><img class="button reload" src="Sync.svg"></div>
+  </div>
+  <div id="clicker" onclick="hideNav()"></div>
 </body>
 <script>
   function myFunction() {
     if ($("body").css("background-color") == "rgb(255, 255, 255)"){
-      $("body").css("background-color", "#000");
+      $('body').css("background-color", "#000");
       $('#sun').show();      
       $('#moon').hide();
     } else {
-      $("body").css("background-color", "FFF");
+      $('body').css("background-color", "FFF");
       $('#moon').show();      
       $('#sun').hide();
     }
@@ -57,5 +67,9 @@
   
   function reload(){
     location.reload();
+  }
+  
+  function hideNav(){
+      $('#buttons').toggle();      
   }
 </script>
